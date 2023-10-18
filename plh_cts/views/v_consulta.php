@@ -61,7 +61,7 @@
           </div>
         </div>
 				<div id="info_trabajador" name="info_trabajador" class="callout callout-info">
-				Ningún empleado ha sido seleccionado.
+					Ningún empleado ha sido seleccionado aún.
         </div>
       </div><!-- ./card-body -->
     </div><!-- ./card -->
