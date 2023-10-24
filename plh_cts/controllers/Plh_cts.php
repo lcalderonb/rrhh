@@ -230,8 +230,8 @@ class Plh_cts extends MX_Controller
           $html .= '<td class="text-center">0</td>';
           $html .= '<td class="text-center">0</td>';
           $html .= '<td class="text-center">
-                                    <button id="btnEditarAM" type="button" class="btn bg-gradient-warning btn-xs btnEditarAM mt-1 mb-1"><i class="fas fa-edit"></i> Editar</button>
-                                    <button id="btnBorrarAM" type="button" class="btn bg-gradient-success btn-xs btnGuardarAM mt-1 mb-1"><i class="fas fa-save"></i> Guardar</button>
+                                    <button id="btnEditarAM" type="button" class="btn btn-block bg-gradient-warning btn-xs btnEditarAM mt-1 mb-1"><i class="fas fa-edit"></i> Editar1</button>
+                                    <button id="btnBorrarAM" type="button" class="btn btn-block bg-gradient-primary btn-xs btnGuardarAM mt-1 mb-1"><i class="fas fa-save"></i> Guardar</button>
                     </td>';
           $html .= '</tr>';
 					$html .= '<tr>';
@@ -246,8 +246,8 @@ class Plh_cts extends MX_Controller
           $html .= '<td class="text-center">0</td>';
           $html .= '<td class="text-center">4</td>';
           $html .= '<td class="text-center">
-                                    <button id="btnEditarAM" type="button" class="btn bg-gradient-warning btn-xs btnEditarAM mt-1 mb-1"><i class="fas fa-edit"></i> Editar</button>
-                                    <button id="btnBorrarAM" type="button" class="btn bg-gradient-success btn-xs btnGuardarAM mt-1 mb-1"><i class="fas fa-save"></i> Guardar</button>
+                                    <button id="btnEditarAM" type="button" class="btn btn-block bg-gradient-warning btn-xs btnEditarAM mt-1 mb-1"><i class="fas fa-edit"></i> Editar1</button>
+                                    <button id="btnBorrarAM" type="button" class="btn btn-block bg-gradient-primary btn-xs btnGuardarAM mt-1 mb-1"><i class="fas fa-save"></i> Guardar</button>
                     </td>';
           $html .= '</tr>';
 					$html .= '<tr>';
@@ -262,8 +262,8 @@ class Plh_cts extends MX_Controller
           $html .= '<td class="text-center">0</td>';
           $html .= '<td class="text-center">15</td>';
           $html .= '<td class="text-center">
-                                    <button id="btnEditarAM" type="button" class="btn bg-gradient-warning btn-xs btnEditarAM mt-1 mb-1"><i class="fas fa-edit"></i> Editar</button>
-                                    <button id="btnBorrarAM" type="button" class="btn bg-gradient-success btn-xs btnGuardarAM mt-1 mb-1"><i class="fas fa-save"></i> Guardar</button>
+                                    <button id="btnEditarAM" type="button" class="btn btn-block bg-gradient-warning btn-xs btnEditarAM mt-1 mb-1"><i class="fas fa-edit"></i> Editar1</button>
+                                    <button id="btnBorrarAM" type="button" class="btn btn-block bg-gradient-primary btn-xs btnGuardarAM mt-1 mb-1"><i class="fas fa-save"></i> Guardar</button>
                     </td>';
           $html .= '</tr>';
       if(!empty($rows)){
