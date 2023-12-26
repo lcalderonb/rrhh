@@ -52,8 +52,8 @@ class Plh_cts extends MX_Controller
     $datos["anios"] = $anios;
 
     $rows_html = array();
-    $rows_trab = $this->m_asistencia->listar_trabajadores();
-		$rows_empl = $this->m_asistencia->listar_empleados(); //-> Listar_empleados
+    $rows_trab = $this->m_plh_cts->listar_empleados();
+		$rows_empl = $this->m_plh_cts->listar_empleados(); //-> Listar_empleados
 		$departamentos 	= $this->m_asistencia->listarDepartamento();
 		$condicion 			= $this->m_asistencia->listarCondicion();
 		$regimen 				= $this->m_asistencia->listarRegimen();
@@ -103,8 +103,8 @@ class Plh_cts extends MX_Controller
 
   function busqueda()
   {
-    $dni = trim($this->input->post('dni'));
-    if($dni != ''){ $dni=intval($dni); }
+    $dni = $this->input->post('dni');
+    //if($dni != ''){ $dni=intval($dni); }
     $nombres = ''; //strtoupper($this->input->post('txtNombres'));
     $fecInicio = fncFormatearFecha($this->input->post('txtFecInicio'));
     $fecFin = fncFormatearFecha($this->input->post('txtFecFin'));
@@ -114,7 +114,7 @@ class Plh_cts extends MX_Controller
 		$resultado['res_html']=$this->tabla_html_head($rows);
 		$resultado['det_html']=$this->tabla_html_detalle(array(
 			'nombres'=> 'Perez Perales, Juan',
-			'dni'=> '0011223344'
+			'dni'=> $dni
 		));
 		// $resultado['servidor']=array(
 		// 															'nombres'=> 'Perez Perales, Juan',
@@ -159,23 +159,23 @@ class Plh_cts extends MX_Controller
 				<div class="input-group-prepend">
 					<span class="input-group-text"><i class="fa fa-user-tie" title="Nombre de Empleado"></i></span>
 				</div>
-				<input type="text" id="txtNombreServidor" class="form-control" value="valor 1" placeholder="Empleado" disabled>
+				<input type="text" id="txtNombreServidor" class="form-control" value="'.$rows['nombres'].'" placeholder="Empleado" disabled>
 				<div class="input-group-prepend">
 					<span class="input-group-text"><i class="fa fa-id-card" title="Documento de Identidad"></i></span>
 				</div>
-				<input type="text" id="txtdocIdServidor" class="form-control" placeholder="Documento de Identidad" disabled>
+				<input type="text" id="txtdocIdServidor" class="form-control" value="'.$rows['dni'].'" placeholder="Documento de Identidad" disabled>
 				<div class="input-group-prepend">
-					<span class="input-group-text"><i class="fa fa-id-card" title="Documento de Identidad"></i></span>
+					<span class="input-group-text"><i class="fa fa-id-card" title="Condición"></i></span>
 				</div>
 				<input type="text" id="txtdocCnServidor" class="form-control" placeholder="Condición" disabled>
 		</div>
 		<div class="input-group mb-1">
 				<div class="input-group-prepend">
-					<span class="input-group-text"><i class="fa fa-id-card" title="Documento de Identidad"></i></span>
+					<span class="input-group-text"><i class="fa fa-id-card" title="Cargo y Nivel"></i></span>
 				</div>
 				<input type="text" id="txtdocCrServidor" class="form-control" placeholder="Cargo y Nivel" disabled>
 				<div class="input-group-prepend">
-					<span class="input-group-text"><i class="fa fa-id-card" title="Documento de Identidad"></i></span>
+					<span class="input-group-text"><i class="fa fa-id-card" title="Fecha de Ingreso"></i></span>
 				</div>
 				<input type="text" id="txtdocFiServidor" class="form-control" placeholder="Fecha de Ingreso" disabled>
 		</div>';
@@ -230,9 +230,11 @@ class Plh_cts extends MX_Controller
           $html .= '<td class="text-center">0</td>';
           $html .= '<td class="text-center">0</td>';
           $html .= '<td class="text-center">
-                                    <button id="btnEditarAM" type="button" class="btn btn-block bg-gradient-warning btn-xs btnEditarAM mt-1 mb-1"><i class="fas fa-edit"></i> Editar1</button>
-                                    <button id="btnBorrarAM" type="button" class="btn btn-block bg-gradient-primary btn-xs btnGuardarAM mt-1 mb-1"><i class="fas fa-save"></i> Guardar</button>
-                    </td>';
+											<div class="btn-group">
+                                    <button id="btnEditarAM" type="button" class="btn btn-block bg-gradient-warning btn-xs btnEditarAM mt-1 mb-1"><i class="fas fa-edit"></i></button>
+                                    <button id="btnBorrarAM" type="button" class="btn btn-block bg-gradient-primary btn-xs btnGuardarAM mt-1 mb-1"><i class="fas fa-save"></i></button>
+											</div>
+										</td>';
           $html .= '</tr>';
 					$html .= '<tr>';
           $html .= '<td class="text-right">2</td>';
@@ -246,8 +248,8 @@ class Plh_cts extends MX_Controller
           $html .= '<td class="text-center">0</td>';
           $html .= '<td class="text-center">4</td>';
           $html .= '<td class="text-center">
-                                    <button id="btnEditarAM" type="button" class="btn btn-block bg-gradient-warning btn-xs btnEditarAM mt-1 mb-1"><i class="fas fa-edit"></i> Editar1</button>
-                                    <button id="btnBorrarAM" type="button" class="btn btn-block bg-gradient-primary btn-xs btnGuardarAM mt-1 mb-1"><i class="fas fa-save"></i> Guardar</button>
+                                    <button id="btnEditarAM" type="button" class="btn btn-block bg-gradient-warning btn-xs btnEditarAM mt-1 mb-1"><i class="fa fa-edit"> Editar</i></button>
+                                    <button id="btnBorrarAM" type="button" class="btn btn-block bg-gradient-primary btn-xs btnGuardarAM mt-1 mb-1"><i class="fa fa-save"></i> Guardar</button>
                     </td>';
           $html .= '</tr>';
 					$html .= '<tr>';

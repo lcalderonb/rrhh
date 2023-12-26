@@ -22,7 +22,7 @@ class M_plh_cts extends CI_Model
 	function listar_empleados() //* listado de trabajadores consolidados de ambos relojes
 	{
 		$bdHospital  = $this->load->database('default', TRUE);
-		$sql = "SELECT * FROM `v_plh_empleados`";
+		$sql = "SELECT (LPAD(LIBELE,8,'00000000')) as dni, concat( nombre, ' (',LIBELE,')' ) AS nombres FROM `v_plh_empleados`";
 		$res = $bdHospital->query($sql);
 		return $res->result_array();
 	}

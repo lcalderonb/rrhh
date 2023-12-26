@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-8">
-        <h1 class="m-0 text-dark text-bold">REPORTE CTS<small>BD PLH</small></h1>
+        <h1 class="m-0 text-dark text-bold">REPORTE DE LIQUIDACIÓN DE CTS<small>BD PLH</small></h1>
       </div><!-- /.col -->
       <div class="col-sm-4">
         <ol class="breadcrumb float-sm-right">
@@ -25,7 +25,7 @@
                 <option value="" selected>-- TODOS --</option>
                 <?php
                   foreach ($trabajadores as $row) {
-                    echo '<option value="'.$row["LIBELE"].'">'.$row["NOMBRE"].'</option>';
+                    echo '<option value="'.$row["dni"].'">'.$row["nombres"].'</option>';
                   }
                 ?>
               </select>
@@ -101,7 +101,7 @@
 							$("#id_list_remuneraciones").html(datos.res_html);
 							fncDatatable();
 							$("#info_trabajador").html(datos.det_html);
-							//console.log(datos.det_html);
+							console.log(datos.det_html);
 					 }
 					if($("#loadMe").length>0){ $("#loadMe").modal("hide"); }
 				},
